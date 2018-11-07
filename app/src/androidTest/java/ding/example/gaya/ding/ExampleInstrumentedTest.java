@@ -84,6 +84,18 @@ public class ExampleInstrumentedTest {
                 }
                 Thread.sleep(3000);
                 uiDevice.pressBack();
+                String is_daka_2_text = "";
+                try{
+                    Log.i("somentest1","sgdojoj1");
+                    UiObject is_daka_2 = uiDevice.findObject(new UiSelector().description("上班时间09:00"));
+                    Log.i("somentest2",is_daka_2.getContentDescription());
+                    is_daka_2_text = is_daka_2.getContentDescription();
+                }catch (Exception e){
+
+                }
+                if(is_daka_2_text.equals("上班时间09:00")) {
+                    uiDevice.pressBack();
+                }
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -107,5 +119,10 @@ public class ExampleInstrumentedTest {
             e.printStackTrace();
         }
         closeAPP(uiDevice,"com.alibaba.android.rimet");
+        try {
+            uiDevice.sleep();
+        }catch (Exception e){
+
+        }
     }
 }
