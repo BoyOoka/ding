@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     public void runMyUiautomator(View v)throws IOException{
 //        new UiautomatorThread().start();
         Log.e("test","test");
-        CommandExecution.execCommand("nohup am instrument -w -r -e debug false -e class ding.example.gaya.ding.ExampleInstrumentedTest#daka ding.example.gaya.ding.test/android.support.test.runner.AndroidJUnitRunner",false);
+        CommandExecution.execCommand("nohup am instrument -w -r -e debug false -e class ding.example.gaya.ding.ExampleInstrumentedTest#daka ding.example.gaya.ding.test/android.support.test.runner.AndroidJUnitRunner",true);
 //        execCommand("nohup am instrument -w -r -e debug false -e class ding.example.gaya.ding.ExampleInstrumentedTest#daka ding.example.gaya.ding.test/android.support.test.runner.AndroidJUnitRunner",true);
 
     }
