@@ -60,14 +60,19 @@ public class ExampleInstrumentedTest {
             }
         }catch (Exception e){
             e.printStackTrace();
-        }try {
-            UiObject logo_text = uiDevice.findObject(new UiSelector().resourceId("com.alibaba.android.rimet:id/img_logo_text"));
-            if(logo_text.getText().equals("钉钉")){
+        }
+//            UiObject logo_text = uiDevice.findObject(new UiSelector().resourceId("com.alibaba.android.rimet:id/img_logo_text"));
+//            if(logo_text.getText().equals("钉钉")){
+            try {
                 UiObject work = uiDevice.findObject(new UiSelector().text("工作"));
                 work.click();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            try {
                 UiObject oa = uiDevice.findObject(new UiSelector().text("考勤打卡"));
                 oa.click();
-                Thread.sleep(8888);
+                Thread.sleep(6688);
                 String is_daka_text = "";
                 try{
                     Log.i("somentest1","sgdojoj1");
@@ -96,7 +101,7 @@ public class ExampleInstrumentedTest {
                 if(is_daka_2_text.equals("上班时间09:00")) {
                     uiDevice.pressBack();
                 }
-            }
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -122,7 +127,7 @@ public class ExampleInstrumentedTest {
         try {
             uiDevice.sleep();
         }catch (Exception e){
-
+            e.printStackTrace();
         }
     }
 }
